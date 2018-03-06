@@ -16,9 +16,16 @@ namespace FooBarQixKata
             { 5, "Bar"},
             { 7, "Qix"}
         };
+        private const int Min = 1;
+        private const int Max = 100;
 
         public string Transform(int number)
         {
+            if (number < Min || number > Max)
+            {
+                throw new ArgumentException(number + " is out of bounds (" + Min + " to " + Max + ")");
+            }
+
             StringBuilder stringBuilder = new StringBuilder();
             string result = string.Empty;
 
@@ -34,7 +41,7 @@ namespace FooBarQixKata
             foreach (char figureChar in numberStr)
             {
                 int figure = (int)Char.GetNumericValue(figureChar);
-                if (_rules.ContainsKey(Convert.ToInt32(figure)))
+                if (_rules.ContainsKey(figure))
                 {
                     stringBuilder.Append(_rules[figure]);
                 }

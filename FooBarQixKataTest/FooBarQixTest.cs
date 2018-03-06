@@ -1,10 +1,18 @@
 ﻿using FooBarQixKata;
 using NUnit.Framework;
+using System;
 
 namespace FooBarQixKataTest
 {
     public class FooBarQixTest
     {
+        [TestCase(0)]
+        [TestCase(999)]
+        public void should_throw_argument_exception_when_number_is_out_of_bounds(int number)
+        {
+            Assert.Throws<ArgumentException>(()=> new FooBarQix().Transform(number)); 
+        }
+
         [TestCase(1, "1")]
         [TestCase(2, "2")]
         [TestCase(11, "11")]
@@ -79,5 +87,11 @@ namespace FooBarQixKataTest
             Assert.AreEqual(expected, actual);
         }
 
+        [TestCase(53, "BarFoo")]
+        public void Should_return_BarFoo_when_number_is_contains_by_5_and_3(int number, string expected)
+        {
+            string actual = new FooBarQix().Transform(number);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
