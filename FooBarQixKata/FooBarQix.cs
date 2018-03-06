@@ -19,6 +19,13 @@ namespace FooBarQixKata
         private const int Min = 1;
         private const int Max = 100;
 
+        /// <summary>
+        /// Transforms the provided number to a FooBarQix string. 
+        /// Returns the same number if not.
+        /// </summary>
+        /// <param name="number">number between 1 and 100.</param>
+        /// <exception cref="ArgumentException">Thrown when number is out of bounds</exception>
+        /// <returns></returns>
         public string Transform(int number)
         {
             if (number < Min || number > Max)
