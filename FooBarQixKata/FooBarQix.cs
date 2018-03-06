@@ -16,8 +16,8 @@ namespace FooBarQixKata
             { 5, "Bar"},
             { 7, "Qix"}
         };
-        private const int Min = 1;
-        private const int Max = 100;
+        public static readonly int Min = 1;
+        public static readonly int Max = 100;
 
         /// <summary>
         /// Transforms the provided number to a FooBarQix string. 

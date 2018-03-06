@@ -14,20 +14,12 @@ namespace FooBarQixKata
             Console.WriteLine("\t Welcome into my Fancy FooBarQix Console App");
             Console.WriteLine("\t╚═══════════════════════════════════════════╝");
 
-            while (true)
+            for(int i = FooBarQix.Min; i <= FooBarQix.Max; i++)
             {
-                try
-                {
-                    Console.Write("Please enter a number between 1 and 100: ");
-                    string numberStr = Console.ReadLine();
-                    int number = Convert.ToInt32(numberStr);
-                    Console.WriteLine(new FooBarQix().Transform(number));
-                }
-                catch(Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                }
+                Console.WriteLine(new FooBarQix().Transform(i));
             }
+
+            Console.ReadLine();
         }
     }
 }
