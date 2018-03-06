@@ -18,7 +18,7 @@ More details:
 * 15 is divisible by 3 and 5 and contains 5, so we print “FooBarBar”
 * 33 contains 3 two times and is divisible by 3, so we print “FooFooFoo”
 
-## Architecture decision record (ADR)
+## Architecture Decision Record (ADR)
 
 * Since divisors have high precedence we have to guarantee the order. SortedDictionary is suitable for this purpose since the order of Dictionary is undefined. Also, the dictionary is readonly so we're assuring thread-safety.
 * The Transform function validates the argument before further processing.
