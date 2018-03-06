@@ -22,23 +22,21 @@ namespace FooBarQixKata
             StringBuilder stringBuilder = new StringBuilder();
             string result = string.Empty;
 
-            foreach (int key in _rules.Keys)
+            foreach (KeyValuePair<int, string> entry in _rules)
             {
-                if(IsDivisibleBy(number, key))
+                if(IsDivisibleBy(number, entry.Key))
                 {
-                    stringBuilder.Append(_rules[key]);
+                    stringBuilder.Append(entry.Value);
                 }
+            }
 
-                string numberStr = number.ToString(CultureInfo.InvariantCulture);
-                if(numberStr.Contains(key.ToString()))
+            string numberStr = number.ToString(CultureInfo.InvariantCulture);
+            foreach (char figureChar in numberStr)
+            {
+                int figure = (int)Char.GetNumericValue(figureChar);
+                if (_rules.ContainsKey(Convert.ToInt32(figure)))
                 {
-                    foreach(var figure in numberStr)
-                    {
-                        if(figure.Equals(key.ToString()[0]))
-                        {
-                            stringBuilder.Append(_rules[key]);
-                        }
-                    }
+                    stringBuilder.Append(_rules[figure]);
                 }
             }
 

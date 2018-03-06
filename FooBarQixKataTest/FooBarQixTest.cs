@@ -72,8 +72,8 @@ namespace FooBarQixKataTest
         }
 
 
-        [TestCase(35, "FooBarBarQix")]
-        public void Should_return_FooBarBarQix_when_number_is_divisible_by_3_and_7_contains_3_and_5(int number, string expected)
+        [TestCase(35, "BarQixFooBar")]
+        public void Should_return_BarQixFooBar_when_number_is_divisible_by_5_and_7_contains_3_and_5(int number, string expected)
         {
             string actual = new FooBarQix().Transform(number);
             Assert.AreEqual(expected, actual);
