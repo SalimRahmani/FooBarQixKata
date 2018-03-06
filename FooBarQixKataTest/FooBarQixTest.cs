@@ -22,6 +22,20 @@ namespace FooBarQixKataTest
             Assert.AreEqual(expected, result);
         }
 
+        [TestCase(100, "Bar")]
+        public void Should_return_Foo_when_number_divisible_by_5(int number, string expected)
+        {
+            string actual = new FooBarQix().Transform(number);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(21, "FooQix")]
+        public void Should_return_FooBarBar_when_number_is_divisible_by_3_and_7(int number, string expected)
+        {
+            string actual = new FooBarQix().Transform(number);
+            Assert.AreEqual(expected, actual);
+        }
+
         [TestCase(13, "Foo")]
         public void Should_return_Foo_when_number_contains_3(int number, string expected)
         {
@@ -31,6 +45,35 @@ namespace FooBarQixKataTest
 
         [TestCase(17, "Qix")]
         public void Should_return_Qix_when_number_contains_7(int number, string expected)
+        {
+            string actual = new FooBarQix().Transform(number);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(15, "FooBarBar")]
+        public void Should_return_FooBarBar_when_number_is_divisible_by_3_and_5_and_contains_5(int number, string expected)
+        {
+            string actual = new FooBarQix().Transform(number);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(33, "FooFooFoo")]
+        public void Should_return_FooFooFoo_when_number_is_divisible_by_3_and_contains_3(int number, string expected)
+        {
+            string actual = new FooBarQix().Transform(number);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(77, "QixQixQix")]
+        public void Should_return_QixQixQix_when_number_is_divisible_by_7_and_contains_7(int number, string expected)
+        {
+            string actual = new FooBarQix().Transform(number);
+            Assert.AreEqual(expected, actual);
+        }
+
+
+        [TestCase(35, "FooBarBarQix")]
+        public void Should_return_FooBarBarQix_when_number_is_divisible_by_3_and_7_contains_3_and_5(int number, string expected)
         {
             string actual = new FooBarQix().Transform(number);
             Assert.AreEqual(expected, actual);
