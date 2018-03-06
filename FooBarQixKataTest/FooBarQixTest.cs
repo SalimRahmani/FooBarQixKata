@@ -22,5 +22,19 @@ namespace FooBarQixKataTest
             Assert.AreEqual(expected, result);
         }
 
+        [TestCase(13, "Foo")]
+        public void Should_return_Foo_when_number_contains_3(int number, string expected)
+        {
+            string actual = new FooBarQix().Transform(number);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(17, "Qix")]
+        public void Should_return_Qix_when_number_contains_7(int number, string expected)
+        {
+            string actual = new FooBarQix().Transform(number);
+            Assert.AreEqual(expected, actual);
+        }
+
     }
 }

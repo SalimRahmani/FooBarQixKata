@@ -28,6 +28,18 @@ namespace FooBarQixKata
                 {
                     stringBuilder.Append(_rules[key]);
                 }
+
+                string numberStr = number.ToString(CultureInfo.InvariantCulture);
+                if(numberStr.Contains(key.ToString()))
+                {
+                    foreach(var figure in numberStr)
+                    {
+                        if(figure.Equals(key.ToString()[0]))
+                        {
+                            stringBuilder.Append(_rules[key]);
+                        }
+                    }
+                }
             }
 
             result = stringBuilder.ToString();
