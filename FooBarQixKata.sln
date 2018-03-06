@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FooBarQixKata", "FooBarQixKata\FooBarQixKata.csproj", "{716288B8-BB4E-4739-872B-8A4548377172}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FooBarQixKataTest", "FooBarQixKataTest\FooBarQixKataTest.csproj", "{A7731EF3-5067-491A-8616-A0B966C477FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{716288B8-BB4E-4739-872B-8A4548377172}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{716288B8-BB4E-4739-872B-8A4548377172}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{716288B8-BB4E-4739-872B-8A4548377172}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7731EF3-5067-491A-8616-A0B966C477FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7731EF3-5067-491A-8616-A0B966C477FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7731EF3-5067-491A-8616-A0B966C477FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7731EF3-5067-491A-8616-A0B966C477FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
