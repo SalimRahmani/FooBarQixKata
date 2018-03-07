@@ -36,14 +36,31 @@ namespace FooBarQixKata
             StringBuilder stringBuilder = new StringBuilder();
             string result = string.Empty;
 
+            HandleDivisor(number, stringBuilder);
+            HandleContent(number, stringBuilder);
+
+            result = stringBuilder.ToString();
+            return string.IsNullOrEmpty(result) ? number.ToString(CultureInfo.InvariantCulture) : result;
+        }
+
+        private void HandleDivisor(int number, StringBuilder stringBuilder)
+        {
             foreach (KeyValuePair<int, string> entry in _rules)
             {
-                if(IsDivisibleBy(number, entry.Key))
+                if (IsDivisibleBy(number, entry.Key))
                 {
                     stringBuilder.Append(entry.Value);
                 }
             }
+        }
 
+        private bool IsDivisibleBy(int number, int divisor)
+        {
+            return number % divisor == 0;
+        }
+
+        private void HandleContent(int number, StringBuilder stringBuilder)
+        {
             string numberStr = number.ToString(CultureInfo.InvariantCulture);
             foreach (char figureChar in numberStr)
             {
@@ -53,14 +70,7 @@ namespace FooBarQixKata
                     stringBuilder.Append(_rules[figure]);
                 }
             }
-
-            result = stringBuilder.ToString();
-            return string.IsNullOrEmpty(result) ? number.ToString(CultureInfo.InvariantCulture) : result;
         }
 
-        private bool IsDivisibleBy(int number, int divisor)
-        {
-            return number % divisor == 0;
-        }
     }
 }
